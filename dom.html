@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Manejo del DOM - Ejercicios</title>
+    <link rel="stylesheet" href="dom.css">
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>Manejo del DOM — Ejercicios</h1>
+
+      <!-- Ejercicio 1: Lista de tareas -->
+      <section class="card">
+        <h2>Ejercicio 1 — Lista de tareas</h2>
+        <div class="row">
+          <input id="tareaInput" type="text" placeholder="Escribe una tarea...">
+          <button id="agregarBtn">Agregar tarea</button>
+        </div>
+        <p id="errorMsg" class="error" aria-live="polite"></p>
+        <ul id="tareasList" class="list"></ul>
+        <p class="hint">Nota: haz doble clic en una tarea para eliminarla; clic simple para marcar/desmarcar completada.</p>
+      </section>
+
+      <!-- Ejercicio 2: Contador interactivo -->
+      <section class="card">
+        <h2>Ejercicio 2 — Contador interactivo</h2>
+        <div class="counter">
+          <h2 id="numero">0</h2>
+          <div class="controls">
+            <button id="inc">+</button>
+            <button id="dec">−</button>
+            <button id="reset">Reset</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ejercicio 3: Catálogo dinámico -->
+      <section class="card">
+        <h2>Ejercicio 3 — Catálogo dinámico</h2>
+        <div class="row">
+          <input id="filtro" type="text" placeholder="Filtrar por nombre...">
+          <div id="carrito">Carrito: <span id="carritoCount">0</span></div>
+        </div>
+        <div id="catalogo" class="grid"></div>
+        <p id="noCoincide" class="muted"></p>
+      </section>
+
+    </main>
+
+    <script type="module" src="dom.js"></script>
+  </body>
+</html>
