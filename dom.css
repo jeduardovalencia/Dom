@@ -1,6 +1,6 @@
 
 :root{
-	--bg: linear-gradient(180deg,#e9f1ff 0%, #fefbe6 60%); /* soft blue -> warm yellow */
+	--bg: linear-gradient(180deg,#e9f1ff 0%, #fefbe6 60%);
 	--surface: #ffffff;
 	--blue: #0b63d8;
 	--green: #1fa65a;

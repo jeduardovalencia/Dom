@@ -1,7 +1,4 @@
-// dom.js — implementa los 3 ejercicios solicitados (Manejo del DOM)
-// Nota: asumí que "clic para eliminar" se transforma en: clic simple = marcar/ desmarcar completada; doble clic = eliminar.
-
-// ---------------------- Ejercicio 1: Lista de tareas ----------------------
+//
 const tareaInput = document.getElementById('tareaInput');
 const agregarBtn = document.getElementById('agregarBtn');
 const tareasList = document.getElementById('tareasList');
@@ -10,11 +7,11 @@ const errorMsg = document.getElementById('errorMsg');
 function crearTarea(text) {
   const li = document.createElement('li');
   li.textContent = text;
-  // marcar/ desmarcar completada al hacer clic
+ 
   li.addEventListener('click', () => {
     li.classList.toggle('done');
   });
-  // eliminar al hacer doble clic
+
   li.addEventListener('dblclick', () => {
     li.remove();
   });
@@ -58,7 +55,6 @@ resetBtn.addEventListener('click', () => { contador = 0; actualizarContador(); }
 
 actualizarContador();
 
-// ------------------ Ejercicio 3: Catálogo dinámico ----------------------
 const productos = [
   { nombre: 'Camiseta', precio: 19.99, imagen: '👕' },
   { nombre: 'Pantalón', precio: 34.5, imagen: '👖' },
@@ -97,7 +93,7 @@ function renderCatalogo(lista) {
     btn.addEventListener('click', () => {
       carrito++;
       carritoCountEl.textContent = carrito;
-      // breve feedback
+   
       btn.textContent = 'Añadido ✓';
       btn.disabled = true;
       setTimeout(() => { btn.textContent = 'Agregar al carrito'; btn.disabled = false; }, 900);
@@ -109,15 +105,14 @@ function renderCatalogo(lista) {
   });
 }
 
-// filtro en tiempo real
+
 filtroInput.addEventListener('input', () => {
   const q = filtroInput.value.trim().toLowerCase();
   const filtrados = productos.filter(p => p.nombre.toLowerCase().includes(q));
   renderCatalogo(filtrados);
 });
 
-// render inicial
+
 renderCatalogo(productos);
 
-// Exponer algunas funciones para debug en la consola del navegador
 window.__domExercises = { agregarTarea, crearTarea, productos };
