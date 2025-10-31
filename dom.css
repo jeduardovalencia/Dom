@@ -1,18 +1,41 @@
 
 :root{
-    --bg: linear-gradient(180deg,#ecf9f0 0%, #eafaf1 60%);
-    --surface: #ffffff;
-    --accent: #1fa65a; /* verde principal */
-    --muted: #546075;
-    --shadow: 0 10px 30px rgba(15,30,60,0.06);
+        /* Paleta y variables */
+        --bg: linear-gradient(180deg,#ecf9f0 0%, #eafaf1 60%);
+        --bg-solid: #ecf9f0; /* fallback */
+        --surface: #ffffff;
+        --accent: #1fa65a; /* verde principal */
+        --muted: #546075;
+        --shadow: 0 10px 30px rgba(15,30,60,0.06);
 }
 *{box-sizing:border-box}
-body{font-family:Inter, 'Segoe UI', Roboto, Arial, sans-serif;background:var(--bg);margin:0;color:#0f1720}
+
+/* Base layout */
+html,body{height:100%;}
+body{
+    font-family: Inter, 'Segoe UI', Roboto, Arial, sans-serif;
+    background: var(--bg);
+    background-color: var(--bg-solid);
+    margin:0;
+    color:#0f1720;
+    -webkit-font-smoothing:antialiased;
+}
 .wrap{max-width:1000px;margin:30px auto;padding:20px}
-.card{background:var(--surface);padding:16px;border-radius:12px;box-shadow:var(--shadow);margin-bottom:16px;position:relative;overflow:hidden}
-.card::before{content:'';position:absolute;left:0;top:0;height:6px;width:100%;background:linear-gradient(90deg,var(--accent),#97e29c);}
+
+/* Cards */
+.card{
+    background:var(--surface);
+    padding:16px;border-radius:12px;box-shadow:var(--shadow);
+    margin-bottom:16px;position:relative;overflow:hidden;
+}
+.card::before{
+    content:'';position:absolute;left:0;top:0;height:6px;width:100%;
+    background:linear-gradient(90deg,var(--accent),#97e29c);
+}
+
 h1{margin:0 0 18px;color:var(--accent);text-shadow:0 1px 0 rgba(255,255,255,0.6)}
 
+/* Controls */
 .top-controls{display:flex;justify-content:flex-end;margin-bottom:12px}
 #themeToggle{background:transparent;border:1px solid rgba(31,166,90,0.12);padding:8px 12px;border-radius:8px;cursor:pointer;color:var(--accent);font-weight:700}
 #themeToggle:hover{background:rgba(31,166,90,0.06)}
@@ -23,6 +46,8 @@ button{background:var(--accent);color:#fff;border:0;padding:9px 14px;border-radi
 button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(31,166,90,0.14)}
 button:active{transform:translateY(0)}
 .error{color:#b00020;margin:8px 0;font-weight:600}
+
+/* Lists & tasks */
 .list{list-style:none;padding:0;margin:10px 0;border-radius:8px;overflow:hidden}
 .list li{padding:10px 12px;border-bottom:1px solid #f0f4fb;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .12s ease}
 .list li:hover{background:linear-gradient(90deg, rgba(31,166,90,0.03), rgba(151,226,156,0.02))}
@@ -30,10 +55,14 @@ button:active{transform:translateY(0)}
 .task-delete{background:transparent;border:1px solid rgba(176,0,32,0.08);padding:6px 8px;border-radius:6px;color:#b00020;cursor:pointer}
 .task-delete:hover{background:rgba(176,0,32,0.06)}
 .hint{font-size:13px;color:var(--muted);margin-top:6px}
+
+/* Counter */
 .counter{display:flex;align-items:center;gap:18px}
 .counter h2{margin:0;font-size:44px;width:90px;text-align:center;border-radius:8px;padding:6px;background:linear-gradient(180deg,#fff,#f6fff5);box-shadow:inset 0 -6px 18px rgba(31,166,90,0.03)}
 .controls button{background:linear-gradient(90deg,var(--accent),#15924a)}
 .controls button#reset{background:linear-gradient(90deg,#97e29c,#6fcf8f);color:#111}
+
+/* Grid/catalog */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-top:12px}
 .card-prod{border-radius:10px;padding:12px;background:linear-gradient(180deg,#fff,#f6fff5);display:flex;flex-direction:column;gap:8px;border:1px solid rgba(31,166,90,0.06);transition:transform .12s ease, box-shadow .12s ease}
 .card-prod:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(31,166,90,0.08)}
@@ -43,14 +72,6 @@ button:active{transform:translateY(0)}
 .add-btn:active{transform:translateY(1px)}
 .muted{color:var(--muted);margin-top:8px}
 #carrito{font-weight:800;color:var(--accent)}
-
-/* Dark mode */
-.dark-mode{background:linear-gradient(180deg,#04200b 0%, #062613 60%);color:#d7f6e6}
-.dark-mode .card{background:#062613}
-.dark-mode button{filter:brightness(0.9)}
-
-/* Tasks */
-.task-delete{background:transparent;color:#b00020;border:0;font-weight:700;margin-left:8px}
 
 /* Gallery */
 .gallery-main{height:140px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:48px;background:linear-gradient(180deg,#f6fff5,#fff)}
@@ -63,15 +84,14 @@ button:active{transform:translateY(0)}
 
 /* Game */
 .game-area{position:relative;height:160px}
-.target{position:absolute;width:48px;height:48px;border-radius:50%;background:linear-gradient(90deg,#9ff5b3,#2fb65b);display:none}
-.target{transition:transform .12s ease, box-shadow .12s ease}
+.target{position:absolute;width:48px;height:48px;border-radius:50%;background:linear-gradient(90deg,#9ff5b3,#2fb65b);display:none;transition:transform .12s ease, box-shadow .12s ease}
 .target:active{transform:scale(0.92)}
 
 /* Calculator */
 .calc{max-width:260px}
 #calcDisplay{width:100%;padding:8px;border-radius:6px;margin-bottom:8px}
 .keys{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
-.key{padding:10px;border-radius:6px;background:#f0fff4;border:0}
+.key{padding:10px;border-radius:6px;background:#020703;color:#fff;border:0}
 .key:active{transform:translateY(1px)}
 
 /* Magic text */
@@ -84,13 +104,31 @@ button:active{transform:translateY(0)}
 
 /* Menu transitions */
 .menu .submenu{transition:max-height .18s ease, opacity .18s ease}
-
-.muted{color:var(--muted);margin-top:8px}
-
-/* Menu */
 .menu ul{list-style:none;padding:0;margin:0}
 .menu .submenu{display:none;padding-left:12px}
 .menu .open > .submenu{display:block}
+
+/* Dark mode: asegurar contraste y letras blancas */
+.dark-mode{
+    background:linear-gradient(180deg,#04200b 0%, #062613 60%);
+    color:#ffffff; /* letras blancas */
+}
+.dark-mode .card{
+    background:linear-gradient(180deg,#072814,#062613);
+    color:var(--text, #ffffff);
+}
+.dark-mode .card::before{background:linear-gradient(90deg,#4bd67e,#97e29c)}
+.dark-mode button{filter:brightness(0.95)}
+.dark-mode input, .dark-mode textarea, .dark-mode select{
+    background:rgba(255,255,255,0.03);
+    color:#ffffff;
+    border-color:rgba(255,255,255,0.06);
+}
+.dark-mode .muted{color:rgba(255,255,255,0.7)}
+.dark-mode .prod-price{color:rgba(255,255,255,0.85)}
+.dark-mode .list li{border-bottom-color:rgba(255,255,255,0.04)}
+.dark-mode .gallery-main{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))}
+
 
 @media (max-width:720px){
 	.row{flex-direction:column;align-items:stretch}
