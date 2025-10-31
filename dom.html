@@ -9,6 +9,9 @@
   <body>
     <main class="wrap">
       <h1>Manejo del DOM — Ejercicios</h1>
+      <div class="top-controls">
+        <button id="themeToggle">Cambiar tema</button>
+      </div>
 
       
       <section class="card">
@@ -19,7 +22,8 @@
         </div>
         <p id="errorMsg" class="error" aria-live="polite"></p>
         <ul id="tareasList" class="list"></ul>
-        <p class="hint">Nota: haz doble clic en una tarea para eliminarla; clic simple para marcar/desmarcar completada.</p>
+        <p id="noTareas" class="muted">No hay tareas</p>
+        <p class="hint">Nota: clic para marcar completada; usa el botón Eliminar para borrar.</p>
       </section>
 
       <section class="card">
@@ -43,6 +47,78 @@
         </div>
         <div id="catalogo" class="grid"></div>
         <p id="noCoincide" class="muted"></p>
+      </section>
+
+      <section class="card">
+        <h2>Galería con ampliación</h2>
+        <div id="galeriaMain" class="gallery-main">👁️</div>
+        <div id="galeriaThumbs" class="gallery-thumbs"></div>
+      </section>
+
+      <section class="card">
+        <h2>Reloj digital</h2>
+        <div id="reloj" class="big-clock">00:00:00</div>
+      </section>
+
+      <section class="card">
+        <h2>Juego: Clic rápido</h2>
+        <div id="game" class="game-area">
+          <button id="startGame">Iniciar juego</button>
+          <div id="target" class="target"></div>
+          <div>Tiempo: <span id="gameTime">30</span>s — Puntaje: <span id="gameScore">0</span></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Quiz interactivo</h2>
+        <div id="quiz"></div>
+      </section>
+
+      <section class="card">
+        <h2>Formulario con validación</h2>
+        <form id="formDemo" novalidate>
+          <label>Nombre <input id="fName" type="text"></label>
+          <div class="error" id="errName"></div>
+          <label>Correo <input id="fEmail" type="email"></label>
+          <div class="error" id="errEmail"></div>
+          <label>Contraseña <input id="fPass" type="password"></label>
+          <div class="error" id="errPass"></div>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Calculadora simple</h2>
+        <div class="calc">
+          <input id="calcDisplay" readonly>
+          <div class="keys" id="calcKeys"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Texto mágico</h2>
+        <input id="magicInput" type="text" placeholder="Escribe...">
+        <div id="magicOut" class="magic-out"></div>
+      </section>
+
+      <section class="card">
+        <h2>Menú desplegable dinámico</h2>
+        <nav class="menu">
+          <ul>
+            <li class="menu-item">Opciones
+              <ul class="submenu">
+                <li>Sub 1</li>
+                <li>Sub 2</li>
+              </ul>
+            </li>
+            <li class="menu-item">Más
+              <ul class="submenu">
+                <li>Sub A</li>
+                <li>Sub B</li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
       </section>
 
     </main>
